@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tony-pink: #ff1fbf;
+  --color-tony-purple: #4b146d;
+  --color-tony-dark: #210021;
+  --color-tony-black: #050505;
+  --color-tony-blue: #2d5bff;
+  --color-tony-orange: #ff7a00;
+  
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+  }
+  
+  .text-shadow-pink {
+    text-shadow: 0 0 10px rgba(255, 31, 191, 0.8), 0 0 20px rgba(255, 31, 191, 0.4);
+  }
+
+  .text-shadow-blue {
+    text-shadow: 0 0 10px rgba(45, 91, 255, 0.8), 0 0 20px rgba(45, 91, 255, 0.4);
+  }
+
+  .neon-border-pink {
+    border: 1px solid #ff1fbf;
+    box-shadow: 0 0 15px rgba(255, 31, 191, 0.3);
+  }
+
+  .bg-radial-theme {
+    background: radial-gradient(circle at 10% 10%, #210021 0%, #050505 50%), radial-gradient(circle at 90% 90%, #4b146d 0%, #050505 50%);
+    background-color: #050505;
+  }
+}
+
+body {
+  @apply bg-tony-black text-white antialiased selection:bg-tony-pink selection:text-white max-w-[100vw] overflow-x-hidden;
+}
